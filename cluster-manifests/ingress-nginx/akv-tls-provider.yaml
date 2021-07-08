@@ -14,10 +14,10 @@ spec:
       key: tls.crt
   parameters:
     usePodIdentity: "true"
-    keyvaultName: KEYVAULT_NAME
+    keyvaultName: kv-aks-ubqaq4oglj74u
     objects: |
       array:
         - |
           objectName: ingress-internal-aks-ingress-contoso-com-tls
           objectType: secret
-    tenantId: KEYVAULT_TENANT
+    tenantId: 1239b6ca-4f61-45d8-acdf-884ddc7ab0c2

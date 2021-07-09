@@ -43,6 +43,9 @@ Following the steps below will result in an Azure AD configuration that will be 
    ```bash
    AADOBJECTNAME_GROUP_CLUSTERADMIN=cluster-admins-bu0001a000500
    AADOBJECTID_GROUP_CLUSTERADMIN=$(az ad group create --display-name $AADOBJECTNAME_GROUP_CLUSTERADMIN --mail-nickname $AADOBJECTNAME_GROUP_CLUSTERADMIN --description "Principals in this group are cluster admins in the bu0001a000500 cluster." --query objectId -o tsv)
+   
+   ## OR IF YOU ALREADY DID THIS BEFORE
+   # AADOBJECTID_GROUP_CLUSTERADMIN=$(az ad group show --group $AADOBJECTNAME_GROUP_CLUSTERADMIN --query objectId -o tsv)
    ```
 
 1. Create a "break-glass" cluster administrator user for your AKS cluster.

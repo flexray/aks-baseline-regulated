@@ -56,6 +56,9 @@ Following the steps below will result in an Azure AD configuration that will be 
    TENANTDOMAIN_K8SRBAC=$(az ad signed-in-user show --query 'userPrincipalName' -o tsv | cut -d '@' -f 2 | sed 's/\"//')
    AADOBJECTNAME_USER_CLUSTERADMIN=bu0001a000500-admin
    AADOBJECTID_USER_CLUSTERADMIN=$(az ad user create --display-name=${AADOBJECTNAME_USER_CLUSTERADMIN} --user-principal-name ${AADOBJECTNAME_USER_CLUSTERADMIN}@${TENANTDOMAIN_K8SRBAC} --force-change-password-next-login --password ChangeMebu0001a0005AdminChangeMe --query objectId -o tsv)
+   
+   ## OR IF YOU ALREADY DID THIS BEFORE
+   # AADOBJECTID_USER_CLUSTERADMIN=$(az ad user show --id ${AADOBJECTNAME_USER_CLUSTERADMIN}@${TENANTDOMAIN_K8SRBAC} --query objectId -o tsv)
    ```
 
 1. Add the cluster admin user(s) to the cluster admin security group.

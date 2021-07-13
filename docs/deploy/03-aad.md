@@ -65,6 +65,8 @@ Following the steps below will result in an Azure AD configuration that will be 
 
    ```bash
    az ad group member add -g $AADOBJECTID_GROUP_CLUSTERADMIN --member-id $AADOBJECTID_USER_CLUSTERADMIN
+   
+   ## SKIP IF YOU ALREADY DID THIS BEFORE
    ```
 
 1. Create/identify additional security groups to map onto other Kubernetes RBAC roles. _Optional._
